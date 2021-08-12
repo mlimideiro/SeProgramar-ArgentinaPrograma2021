@@ -1,0 +1,153 @@
+/**/
+
+function longitud(unString) /* ... */
+// Retorna cuan largo es un string
+//
+// Por ejemplo:
+//
+//   longitud("hola")
+//  4
+
+
+function convertirEnMayuscula(unString) /* ... */
+// Convierte una palabra en mayúsculas
+//
+// Por ejemplo:
+//
+//   convertirEnMayuscula("hola")
+//  "HOLA"
+
+
+function comienzaCon(unString, otroString) /* ... */
+// Retorna un booleano que nos dice si unString empieza con otroString
+//
+// Por ejemplo:
+//
+//   comienzaCon("hola todo el mundo", "hola todo")
+//  true
+
+/**/
+
+/**/
+
+function imprimir(unString) /* ... */
+// Imprime por pantalla unString
+//
+// Por ejemplo:
+//
+//   imprimir("¡estoy imprimiendo!")
+//  ¡estoy imprimiendo!
+
+
+function tirarDado() /* ... */
+// Retorna un número al azar entre 1 y 6
+//
+// Por ejemplo:
+//
+//   tirarDado()
+//  5
+//   tirarDado()
+//  1
+//   tirarDado()
+//  2
+
+/**/
+
+function listasIguales(unArray, otroArray) /* ... */
+// Retorna un booleano que nos dice si dos listas son iguales
+//
+// Por ejemplo:
+//
+//   listasIguales([1, 2, 3], [1, 2, 3])
+//  true
+//   listasIguales([1, 2, 3], [4, 5, 3])
+//  false
+
+
+function longitud(unStringOLista) /* ... */
+// Retorna el largo de un string o una lista
+//
+// Por ejemplo:
+//
+//   longitud("hola")
+//  4
+//   longitud([5, 6, 3])
+//  3
+
+
+function agregar(unaLista, unElemento) /* ... */
+// Inserta unElemento al final de unaLista.
+// Este es un procedimiento que no retorna nada pero modifica a unaLista:
+//
+//   let cancionesFavoritas = ["La colina de la vida", "Zamba por vos"]
+//   agregar(cancionesFavoritas, "Seminare")
+//   cancionesFavoritas
+//  ["La colina de la vida", "Zamba por vos", "Seminare"]
+
+
+function remover(unaLista) /* ... */
+// Quita el último elemento de unaLista y lo retorna.
+//
+//   let listaDeCompras = ["leche", "pan", "arroz", "aceite", "yerba"]
+//   remover(listaDeCompras)
+//  "yerba"
+//   listaDeCompras
+//  ["leche", "pan", "arroz", "aceite"]
+
+
+function posicion(unaLista, unElemento) /* ... */
+// Retorna la posición se encuentra un elemento.
+// Si el elemento no está en la lista, retorna -1
+//
+//   let premios = ["dani", "agus", "juli", "fran"]
+//   posicion(premios, "dani")
+//  0
+//   posicion(premios, "juli")
+//  2
+//   posicion(premios, "feli")
+//  -1
+
+// Nos dice el año de una fecha
+function anio(fecha) /* ... */
+
+function cantidadDeBalancesPositivos(balancesDeUnPeriodo) {
+  let cantidad = 0;
+  for (let balance of balancesDeUnPeriodo) {
+    if(balance.ganancia > cantidad){
+      cantidad = cantidad + 1;
+    }
+  }
+  return cantidad;
+}
+
+function ganancias(balancesDeUnPeriodo) {
+  let ganancias = [];
+  for (let balance of balancesDeUnPeriodo) {
+    agregar(ganancias,balance.ganancia);
+  }
+  return ganancias;
+}
+
+
+function balancesPositivos(balancesDeUnPeriodo) {
+  let balances = [];
+  for (let balance of balancesDeUnPeriodo) {
+    if(balance.ganancia > 0){
+      agregar(balances,balance)
+    }
+  }
+  return balances;
+}
+
+
+function promedio(listaDeNumeros) {
+    return sumatoria(listaDeNumeros) / longitud(listaDeNumeros);
+}
+
+function sumatoria(listaDeNumeros) {
+  let sumatoria = 0;
+  for (let numero of listaDeNumeros) {
+    sumatoria = sumatoria + numero;
+  }
+  return sumatoria;
+}
