@@ -1,0 +1,114 @@
+module Obera
+    def self.kilometro
+        1040
+    end
+
+    def self.distancia_a(destino)
+        (destino.kilometro - self.kilometro).abs
+    end
+end
+
+module Iruya
+  def self.kilometro
+     1710
+    end
+
+    def self.distancia_a(destino)
+        (destino.kilometro - self.kilometro).abs
+    end    
+end
+
+module BuenosAires
+    def self.kilometro
+        0
+    end
+
+    def self.distancia_a(destino)
+        (destino.kilometro - self.kilometro).abs
+    end    
+end
+
+module Pepita
+  @energia = 1000
+
+  def self.energia
+    @energia 
+  end
+
+  def self.volar_en_circulos!
+    @energia -= 10
+  end
+
+  def self.comer_alpiste!(gramos)
+    @energia += gramos * 15
+  end  
+
+  def self.debil?
+    self.energia < 100
+  end
+
+  def self.feliz?
+    self.energia >1000
+  end
+
+  def self.hacer_lo_que_quiera!
+    if self.debil?
+      self.comer_alpiste!(10)
+    elsif
+      self.feliz?
+        5.times{self.volar_en_circulos!}
+    else
+        3.times{self.volar_en_circulos!}
+    end
+  end
+end
+module Pachorra
+  def self.firmar_contrato!(ave)
+    @ave = ave
+  end
+
+  def self.entrenar_ave!
+    10.times { @ave.volar_en_circulos! }
+    @ave.comer_alpiste! 30
+    5.times { @ave.volar_en_circulos! }
+    @ave.hacer_lo_que_quiera!
+  end
+end
+
+module Emilce
+  def self.firmar_contrato!(ave)
+    @ave = ave
+  end
+
+  def self.entrenar_ave!
+    53.times { @ave.volar_en_circulos! }
+    @ave.comer_alpiste!(8)
+  end
+end
+
+module Manuelita
+  @energia = 100
+  @ciudad = Pehuajo
+  @mineral_preferido = Malaquita
+  @donde_va = Paris
+
+  def self.energia
+    @energia
+  end
+
+  def self.ciudad
+    @ciudad
+  end
+
+  def self.mineral_preferido=(mineral)
+    @mineral_preferido = mineral
+  end
+
+  def self.mineral_preferido
+    @mineral_preferido
+  end
+
+  def self.donde_va=(ciudad)
+    @donde_va = ciudad
+  end
+end
