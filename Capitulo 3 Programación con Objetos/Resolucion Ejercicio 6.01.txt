@@ -1,0 +1,34 @@
+Ejercicio 6.01 Resolucion
+ 
+module Bouba
+  @gritar = "¡agrrrg!"
+  @salud = 100
+  
+  def self.sabe_correr?
+    correr = false
+  end
+  
+  def self.gritar
+    @gritar
+  end
+  
+  def self.salud
+    @salud
+  end
+  
+  def self.recibir_danio!(danio)
+    @salud = [@salud - danio * 2, 0].max
+  end
+end
+
+Explicacion:
+Pensemos que la idea es que el atributo @salud disminuya 
+según el daño recibido o sea 0, dependiendo de cual de las 
+dos cosas sea  el máximo, pero analicemos qué pasa con el código 
+escrito así. Esto sería igual a escribir: @salud = @salud - [ daño*2, 0].max,
+ por lo que las posibles opciones serían: @salud = @salud - daño*2 o @salud = @salud - 0, 
+dependiendo de cual sea el máximo. Y acá ya vemos un error, porque si el 0 es el 
+máximo la salud debería ser 0, pero en su lugar se le resta 0 a la salud. 
+Para poder hacer lo que estás pensando deberías hacer: @salud = [@salud - danio*2, 0].max. 
+De esta forma si el 0 es el máximo la salud va a ser 0, y en caso de que no sea así a la 
+salud se le van a restar los puntos de daño por 2.

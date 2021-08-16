@@ -1,0 +1,37 @@
+Ejercicio 6.09 Resolucion
+
+class Sobreviviente
+  def initialize
+   @energia = 1000
+  end
+
+  def energia
+    @energia
+  end
+
+  def atacar!(zombi,puntos)
+    zombi.recibir_danio!(puntos)
+  end
+  
+  def ataque_masivo!(coleccion_zombis)
+    coleccion_zombis.each { |zombi| self.atacar!(zombi,15)}
+  end
+  
+end
+
+
+juliana = Sobreviviente.new
+anastasia = Sobreviviente.new
+
+caminantes = []
+
+20.times{caminantes.push(Zombi.new)}
+
+Explicacion:
+En el ataque_masivo!, la persona Sobreviviente debe atacar a cada uno de los caminantes. 
+Para eso, recurrimos a caminantes.each. De esta forma, tomaremos de a un zombie por vez 
+para poder atacarlo. Quien realiza ese atacar! es la persona Sobreviviente. Actualmente,
+ en tu solución quien acataca es el zombie. 
+Recordá que para un objeto pueda enviarse un mensaje a sí mismo, debe hacerlo utilizando self.
+ Revisá el método atacar! de Sobreviviente para saber qué argumentos necesita. 
+Tené en cuenta que ataca de a un zombie a la vez.
